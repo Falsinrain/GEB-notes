@@ -1,0 +1,29 @@
+n = 10
+A = [[] for i in range(10)]
+A[0].append("MI")
+
+def rule_1(word):
+    if word[-1] == "I":
+        A[i].append(word + "U")
+
+def rule_2(word):
+    A[i].append(word + word[1:])
+
+def rule_3(word):
+    for s in range(len(word)-2):
+        if word[s,s+2] == "III":
+            A[i].append(word[:s] + "U" + word[s+3:])
+
+def rule_4(word):
+    for m in range(len(word)-1):
+        if word[m,m+1] == "UU":
+            A[i].append(word[:m] + word[m+2:])
+
+        
+for i in range(1,n):
+    for w in A[i-1]:
+        rule_1(w)
+        rule_2(w)
+        rule_3(w)
+        rule_4(w)
+    print(A[i])
